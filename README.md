@@ -29,7 +29,7 @@ O projeto foi feito com as seguintes tecnologias:
 
 #### Clonando o projeto
 ```sh
-$ git clone https://github.com/jvictorfarias/gobarber.git
+$ git clone https://github.com/dihgo01/Gobarber.git
 $ cd gobarber
 ```
 ## :hammer: Deploy da Aplicação
@@ -40,9 +40,10 @@ $ cd gobarber
 $ cd api
 
 # Criando a imagem Docker do banco de dados:
-# Dentro do projeto, já existe uma arquivo docker-compose.yml que possui o
-# PostgreSQL como banco de dados, basta ter o Docker instalado em sua máquina.
-$ docker-compose up -d # Iniciará em background e não irá bloquear o shell
+# Ao iniciar o docker no terminal de comandos
+$ docker run container --name (NOME DO CONTAINER) -p 3333:3333
+# Apos a criaçao do container vamos instalar a imagem do PostgreSQL .
+$  docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
 
 # Rodando as migrations para o banco de dados e iniciando o projeto
 $ yarn && yarn typeorm migration:run && yarn dev:server
